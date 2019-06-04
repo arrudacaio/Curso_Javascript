@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sistema de Multas</title>
+    <style>
+        body {
+            font: normal 15pt Consolas;
+            text-align: center;
+            background: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> Sistema de Multas</h1>
+    Velocidade do carro: <input type="number" name="vcarro" id="vcarro"> Km
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id="result">
+        
+        Resultado :
+    </div>
+    <script>
+
+
+        function calcular() {
+            var txtv = window.document.getElementById("vcarro");
+            var result = window.document.getElementById("result");
+            var vel = Number(txtv.value);
+            if (vel > 60) {
+                result.innerHTML = `Sua velocidade atual é de ${vel}Km/H, voce será <strong>MULTADO</strong>`;
+            } else {
+                result.innerHTML = `Sua velocidade atual é de ${vel}Km/H , dentro do permitido, Siga em frente`;
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
